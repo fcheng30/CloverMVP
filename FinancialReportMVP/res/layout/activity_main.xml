@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:background="@color/bkg" >
+    	
+
+    <Button
+        android:id="@+id/bRegister"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:text="Register" 
+        android:onClick="onRegisterButtonClick"
+        android:background="@drawable/button_roundedge"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bLogin"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/bRegister"
+        android:layout_below="@+id/bRegister"
+        android:layout_marginTop="20dp"
+        android:text="@string/login_button"
+        android:onClick="onLoginButtonClick"
+        android:background="@drawable/button_roundedge"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"  />
+
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bRegister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="61dp"
+        android:gravity="center"
+        android:shadowColor="#326300"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1.5"
+        android:text="@string/app_name"
+        android:textColor="#37b810"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

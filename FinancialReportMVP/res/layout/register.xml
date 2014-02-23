@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bkg"
+    android:orientation="vertical"
+    android:paddingLeft="10sp"
+    android:paddingRight="10sp" >
+
+    <EditText
+        android:id="@+id/regName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:hint="Name" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/regUserid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:hint="username" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/regPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:hint="password"
+        android:inputType="textPassword" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/regEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:hint="Email"
+        android:inputType="textEmailAddress" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/regText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/reg_text"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/signUP"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_roundedge"
+        android:onClick="onSignUpButtonClick"
+        android:text="@string/signup"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:width="220dp" />
+
+</LinearLayout>
