@@ -2,7 +2,7 @@ package com.example.financialreportmvp;
 
 import java.util.List;
 
-import com.example.financial.db.FinancialDataSource;
+import com.example.financial.db.FinancialUserSource;
 import com.example.financial.model.User;
 import com.example.financialreportmvp.R;
 
@@ -15,13 +15,13 @@ import android.widget.ListView;
 
 public class AdminPageActivity extends ListActivity{
 
-	FinancialDataSource datasource;
+	FinancialUserSource datasource;
 	List<User> users;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.admin_page);
-		datasource = new FinancialDataSource(this);
+		datasource = new FinancialUserSource(this);
 		datasource.open();
 		users = datasource.getUserList();
 		ArrayAdapter<User> adapter = new ArrayAdapter<User>(this, R.layout.list_view1, users);

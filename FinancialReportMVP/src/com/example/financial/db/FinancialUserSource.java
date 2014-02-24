@@ -3,6 +3,7 @@ package com.example.financial.db;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.financial.model.BankAccount;
 import com.example.financial.model.User;
 
 import android.content.ContentValues;
@@ -12,7 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class FinancialDataSource {
+public class FinancialUserSource {
 	public static final String LOGTAG="CLOVER";
 	
 	SQLiteOpenHelper dbhelper;
@@ -26,7 +27,7 @@ public class FinancialDataSource {
 		FinancialDBOpenHelper.COLUMN_TYPE
 	};
 	
-	public FinancialDataSource(Context context) {
+	public FinancialUserSource(Context context) {
 		dbhelper = new FinancialDBOpenHelper(context);
 	}
 	
@@ -41,7 +42,7 @@ public class FinancialDataSource {
 	}
 	
 	
-	public void update(FinancialDataSource fs){
+	public void update(FinancialUserSource fs){
 		Log.i(LOGTAG, "Databases updated");
 		dbhelper.onUpgrade(fs.db, 1, 1);
 	}

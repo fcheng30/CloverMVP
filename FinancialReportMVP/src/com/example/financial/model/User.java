@@ -1,6 +1,5 @@
 package com.example.financial.model;
 
-import java.util.ArrayList;
 
 import com.example.financialreportmvp.MainActivity;
 
@@ -16,7 +15,6 @@ public class User implements Parcelable{
 	private String password;
 	private String name;
 	private String email;
-	private ArrayList<BankAccount> accountList = new  ArrayList<BankAccount>();
 	
 	static public final User NULL_USER = new User("", "", "null","null@foo.com");
 	static public final User ADMIN = new User("admin","pass1234","Administrator","admin@gatech.edu");

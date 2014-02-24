@@ -32,5 +32,12 @@ public interface IRegisterView {
 	 * set display result text to show any error
 	 */
 	void setRegisterText(String text);
+	
+	/**
+	 * Find user by given param
+	 * @param uid
+	 * @return
+	 */
+	User findUser(String uid);
 	void goLoginPage();
 }

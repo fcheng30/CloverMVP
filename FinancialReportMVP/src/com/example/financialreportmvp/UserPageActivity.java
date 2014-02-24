@@ -6,6 +6,7 @@ import com.example.financialreportmvp.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -42,6 +43,8 @@ public class UserPageActivity extends Activity{
 	    switch (item.getItemId()) {
 	        case R.id.user_page_setting:
 	        	Intent intent = new Intent(this, SettingPageActivity.class);
+	        	intent.putExtra("userid", user.getUserid());
+	        	Log.i(MainActivity.LOGTAG, "Pass in userid");
 	        	startActivity(intent);
 	        	break;
 	        default:

@@ -1,6 +1,6 @@
 package com.example.financialreportmvp;
 
-import com.example.financial.db.FinancialDataSource;
+import com.example.financial.db.FinancialUserSource;
 import com.example.financial.model.User;
 import com.example.financial.presenter.LoginPresenter;
 import com.example.financial.view.ILoginView;
@@ -19,7 +19,7 @@ public class LoginActivity extends Activity implements ILoginView{
 	private EditText inputUn;
 	private EditText inputPw;
 	private TextView resultText;
-	private FinancialDataSource datasource;
+	private FinancialUserSource datasource;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class LoginActivity extends Activity implements ILoginView{
 		inputUn = (EditText) findViewById(R.id.usernameLog);
 		inputPw = (EditText) findViewById(R.id.passwordLog);
 		resultText = (TextView) findViewById(R.id.loginText);
-		datasource = new FinancialDataSource(this);
+		datasource = new FinancialUserSource(this);
 		datasource.open();
 		//datasource.update(datasource);
 		logPresenter = new LoginPresenter(this);

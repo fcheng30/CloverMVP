@@ -1,7 +1,6 @@
 package com.example.financialreportmvp;
 
-import com.example.financial.db.FinancialDataSource;
-import com.example.financial.model.MemoryModel;
+import com.example.financial.db.FinancialUserSource;
 import com.example.financial.model.User;
 import com.example.financial.presenter.RegisterPresenter;
 import com.example.financial.view.IRegisterView;
@@ -22,20 +21,20 @@ public class RegisterActivity extends Activity implements IRegisterView{
 	private EditText email;
 	private EditText name;
 	private TextView resultText;
-	FinancialDataSource datasource;
+	private FinancialUserSource datasource;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register);
-		rp = new RegisterPresenter(this, new MemoryModel());
+		rp = new RegisterPresenter(this);
 		username = (EditText) findViewById(R.id.regUserid);
 		password = (EditText) findViewById(R.id.regPassword);
 		name = (EditText) findViewById(R.id.regName);
 		email = (EditText) findViewById(R.id.regEmail);
 		resultText = (TextView) findViewById(R.id.regText);
-		datasource = new FinancialDataSource(this);
+		datasource = new FinancialUserSource(this);
 	}
 	
 	@Override
@@ -85,6 +84,11 @@ public class RegisterActivity extends Activity implements IRegisterView{
 	@Override
 	public void addUser(User user) {
 		datasource.addUser(user);		
+	}
+
+	@Override
+	public User findUser(String uid) {
+		return datasource.findUser(uid);
 	}
 
 
