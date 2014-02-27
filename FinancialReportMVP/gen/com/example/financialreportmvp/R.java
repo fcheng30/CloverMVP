@@ -120,6 +120,8 @@ public final class R {
         public static final int login_text=0x7f060003;
         public static final int logout=0x7f06000a;
         public static final int reg_text=0x7f060004;
+        public static final int remove_user=0x7f06000d;
+        public static final int reset_pw=0x7f06000c;
         public static final int signup=0x7f060007;
     }
     public static final class style {

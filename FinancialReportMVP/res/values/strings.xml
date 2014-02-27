@@ -13,5 +13,8 @@
     <string name="action_bankaccount">Account</string>
     <string name="logout">Logout</string>
     <string name="account_text" />
-
+   	<string name="reset_pw">After reset, the password will be changed
+				 to 123456, are you still going to process?</string>
+    <string name="remove_user">All the data of the user will be deleted,
+        		 are you still going to process?</string>
 </resources>

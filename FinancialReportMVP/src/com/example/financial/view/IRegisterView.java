@@ -24,7 +24,7 @@ public interface IRegisterView {
 	String getEmail();
 	
 	/**
-	 * addUser into model
+	 * addUser into database
 	 */
 	void addUser(User user);
 	

@@ -116,7 +116,8 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:width="220dp" />
+        android:width="220dp"
+        android:onClick="onResetPWClick" />
 
     <Button
         android:id="@+id/delete_userB"
@@ -129,6 +130,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:width="220dp" />
+        android:width="220dp"
+        android:onClick="onDeleteUserClick" />
 
 </LinearLayout>

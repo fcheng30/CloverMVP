@@ -23,6 +23,10 @@ public class AdminPageActivity extends ListActivity{
 		setContentView(R.layout.admin_page);
 		datasource = new FinancialUserSource(this);
 		datasource.open();
+		display();
+	}
+	
+	public void display(){
 		users = datasource.getUserList();
 		ArrayAdapter<User> adapter = new ArrayAdapter<User>(this, R.layout.list_view1, users);
 		setListAdapter(adapter);
@@ -32,6 +36,7 @@ public class AdminPageActivity extends ListActivity{
 	protected void onResume() {
 		super.onResume();
 		datasource.open();
+		display();
 	}
 	
 	@Override

@@ -47,6 +47,7 @@ public class RegisterActivity extends Activity implements IRegisterView{
 	protected void onPause() {
 		super.onPause();
 		datasource.close();
+		finish();
 	}
 	
 	public void onSignUpButtonClick(View v){

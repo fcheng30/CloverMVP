@@ -3,7 +3,6 @@ package com.example.financial.db;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.financial.model.BankAccount;
 import com.example.financial.model.User;
 
 import android.content.ContentValues;
@@ -95,4 +94,19 @@ public class FinancialUserSource {
 		}
 		return users;
 	}
+
+	public void removeUser(String userid) {
+		String[] value = new String[]{userid};
+		db.delete(FinancialDBOpenHelper.TABLE_USERS, FinancialDBOpenHelper.COLUMN_USERID + "=?", value);
+		Log.i(LOGTAG, "Delete user : " + userid);
+	}
+	
+	public void resetPW(String uid){
+		ContentValues values = new ContentValues();
+		String[] userid = new String[]{uid};
+		values.put(FinancialDBOpenHelper.COLUMN_PASSWORD, "123456");
+		db.update(FinancialDBOpenHelper.TABLE_USERS, values, FinancialDBOpenHelper.COLUMN_USERID + "=?", userid);
+		Log.i(LOGTAG, "Password reset : " + uid);
+	}
+	
 }
