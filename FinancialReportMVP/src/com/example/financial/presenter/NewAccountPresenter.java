@@ -28,7 +28,7 @@ public class NewAccountPresenter {
 		if(acname.equals("") || disname.equals("") || balance.equals("") || mir.equals("")){
 			text = "Please fill out the names";
 		} else if(view.checkAccount()){
-			text = "This bank already exsit, please try another one!";
+			text = "This display name already exsit, please try another one!";
 		} else {
 			double dbbalance = Double.parseDouble(balance);
 			double dbmir = Double.parseDouble(mir);
