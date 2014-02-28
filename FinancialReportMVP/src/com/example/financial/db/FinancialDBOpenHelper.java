@@ -33,9 +33,10 @@ public class FinancialDBOpenHelper extends SQLiteOpenHelper{
 	
 	private static final String ACCOUNT_TABLE_CREATE = 
 			"CREATE TABLE " + TABLE_ACCOUNTS + "( " +
-			COLUMN_ACNAME + " TEXT PRIMARY KEY, " + COLUMN_DISNAME + " TEXT, "
+			COLUMN_ACNAME + " TEXT, " + COLUMN_DISNAME + " TEXT, "
 		    + COLUMN_BALANCE + " DOUBLE, " + COLUMN_MIR + " DOUBLE, "
 			+ COLUMN_ACUSERID + " TEXT NOT NULL,"
+			+ "PRIMARY KEY(" + COLUMN_ACNAME +"," + COLUMN_ACUSERID + ") "
 		    + "FOREIGN KEY(" + COLUMN_ACUSERID + ") REFERENCES " + TABLE_USERS
 		    + "(" + COLUMN_USERID+  ")" +")";
 	

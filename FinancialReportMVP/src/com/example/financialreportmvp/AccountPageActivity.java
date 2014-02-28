@@ -20,11 +20,12 @@ public class AccountPageActivity extends ListActivity{
 	private String userid;
 	private FinancialAccountSource datasource;
 	private List<BankAccount> accounts;
+	Bundle b;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.account_page);
-		Bundle b = getIntent().getExtras();
+		b = getIntent().getExtras();
 		userid = b.getString("userid");
 		datasource = new FinancialAccountSource(this);
 		datasource.open();
@@ -32,7 +33,8 @@ public class AccountPageActivity extends ListActivity{
 	}
 
 	public void display(){
-		accounts = datasource.getAccountList();
+		Log.i(MainActivity.LOGTAG, "userid: " + userid);
+		accounts = datasource.getAccountList(userid);
 		ArrayAdapter<BankAccount> adapter = new ArrayAdapter<BankAccount>(this, R.layout.list_view1, accounts);
 		setListAdapter(adapter);
 		Log.i(MainActivity.LOGTAG, "Refresh Account List");

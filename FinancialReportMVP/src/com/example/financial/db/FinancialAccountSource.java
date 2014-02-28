@@ -48,6 +48,7 @@ public class FinancialAccountSource {
 	public boolean checkAccount(String uid, String acname){
 		Cursor cursor = db.query(FinancialDBOpenHelper.TABLE_ACCOUNTS, accountColumns,
 				FinancialDBOpenHelper.COLUMN_ACUSERID + " = " + "'"+ uid + "'", null, null, null, null);
+		Log.i(LOGTAG, "Find " + cursor.getCount() + " rows");
 		if(cursor.getCount() >0){
 			while(cursor.moveToNext()){
 					String name= cursor.getString(cursor.getColumnIndex(FinancialDBOpenHelper.COLUMN_ACNAME));
@@ -72,10 +73,10 @@ public class FinancialAccountSource {
 		Log.i(LOGTAG, "Add a new account " + ba.getName()+ "in " + ba.getUserid());
 	}
 	
-	public List<BankAccount> getAccountList(){
+	public List<BankAccount> getAccountList(String uid){
 		List<BankAccount> accounts = new ArrayList<BankAccount>();
 		Cursor cursor = db.query(FinancialDBOpenHelper.TABLE_ACCOUNTS, accountColumns,
-				null, null, null, null, null);
+				FinancialDBOpenHelper.COLUMN_ACUSERID + " = " + "'"+ uid + "'", null, null, null, null);
 		Log.i(LOGTAG, "Find " + cursor.getCount() + " rows");
 		if(cursor.getCount() >0){
 			while(cursor.moveToNext()){
