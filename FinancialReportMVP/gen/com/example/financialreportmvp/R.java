@@ -57,67 +57,74 @@ public final class R {
         public static final int warning_pressed=0x7f02000a;
     }
     public static final class id {
-        public static final int accountText=0x7f090016;
-        public static final int accountname=0x7f090001;
-        public static final int action_settings=0x7f090023;
-        public static final int add_new_account=0x7f090022;
-        public static final int bLogin=0x7f090006;
-        public static final int bRegister=0x7f090005;
-        public static final int balance=0x7f090003;
-        public static final int bankname=0x7f090000;
-        public static final int button2=0x7f09001e;
-        public static final int delete_bank_account=0x7f090024;
-        public static final int delete_userB=0x7f09000d;
-        public static final int email=0x7f09000b;
-        public static final int loginText=0x7f09000e;
-        public static final int loginbutton=0x7f090011;
-        public static final int logoutButton=0x7f090020;
-        public static final int mainText=0x7f090007;
-        public static final int mir=0x7f090004;
-        public static final int name=0x7f090008;
-        public static final int newAcBalance=0x7f090014;
-        public static final int newAcDisName=0x7f090013;
-        public static final int newAcMIR=0x7f090015;
-        public static final int newAcName=0x7f090012;
-        public static final int password=0x7f09000a;
-        public static final int passwordLog=0x7f090010;
-        public static final int regEmail=0x7f09001a;
-        public static final int regName=0x7f090017;
-        public static final int regPassword=0x7f090019;
-        public static final int regText=0x7f09001b;
-        public static final int regUserid=0x7f090018;
-        public static final int reset_passwordB=0x7f09000c;
-        public static final int setting_account_button=0x7f09001f;
-        public static final int signUP=0x7f09001c;
-        public static final int textView1=0x7f09001d;
-        public static final int userPageName=0x7f090021;
-        public static final int user_page_setting=0x7f090025;
-        public static final int userid=0x7f090002;
-        public static final int username=0x7f090009;
-        public static final int usernameLog=0x7f09000f;
+        public static final int accountText=0x7f09001b;
+        public static final int accountname=0x7f090006;
+        public static final int action_settings=0x7f090028;
+        public static final int add_new_account=0x7f090027;
+        public static final int bLogin=0x7f09000b;
+        public static final int bRegister=0x7f09000a;
+        public static final int balance=0x7f090008;
+        public static final int bankname=0x7f090005;
+        public static final int button2=0x7f090023;
+        public static final int delete_bank_account=0x7f090029;
+        public static final int delete_userB=0x7f090012;
+        public static final int email=0x7f090010;
+        public static final int loginText=0x7f090013;
+        public static final int loginbutton=0x7f090016;
+        public static final int logoutButton=0x7f090025;
+        public static final int mainText=0x7f09000c;
+        public static final int mir=0x7f090009;
+        public static final int name=0x7f09000d;
+        public static final int newAcBalance=0x7f090019;
+        public static final int newAcDisName=0x7f090018;
+        public static final int newAcMIR=0x7f09001a;
+        public static final int newAcName=0x7f090017;
+        public static final int password=0x7f09000f;
+        public static final int passwordLog=0x7f090015;
+        public static final int regEmail=0x7f09001f;
+        public static final int regName=0x7f09001c;
+        public static final int regPassword=0x7f09001e;
+        public static final int regText=0x7f090020;
+        public static final int regUserid=0x7f09001d;
+        public static final int reset_passwordB=0x7f090011;
+        public static final int setting_account_button=0x7f090024;
+        public static final int signUP=0x7f090021;
+        public static final int textView1=0x7f090022;
+        public static final int tranAmount=0x7f090002;
+        public static final int tranDate=0x7f090001;
+        public static final int tranName=0x7f090000;
+        public static final int tranSubmit=0x7f090004;
+        public static final int tranTypeSpinner=0x7f090003;
+        public static final int userPageName=0x7f090026;
+        public static final int user_page_setting=0x7f09002a;
+        public static final int userid=0x7f090007;
+        public static final int username=0x7f09000e;
+        public static final int usernameLog=0x7f090014;
     }
     public static final class layout {
         public static final int account_page=0x7f030000;
-        public static final int activity_bank_account_detail=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int admin_page=0x7f030003;
-        public static final int admin_page_detail=0x7f030004;
-        public static final int bank_transaction=0x7f030005;
-        public static final int list_view1=0x7f030006;
-        public static final int login=0x7f030007;
-        public static final int newaccount_page=0x7f030008;
-        public static final int register=0x7f030009;
-        public static final int reset_password=0x7f03000a;
-        public static final int setting_page=0x7f03000b;
-        public static final int transaction_page=0x7f03000c;
-        public static final int user_page=0x7f03000d;
-        public static final int welcome_screen=0x7f03000e;
+        public static final int activity_add_transaction=0x7f030001;
+        public static final int activity_bank_account_detail=0x7f030002;
+        public static final int activity_main=0x7f030003;
+        public static final int admin_page=0x7f030004;
+        public static final int admin_page_detail=0x7f030005;
+        public static final int bank_transaction=0x7f030006;
+        public static final int list_view1=0x7f030007;
+        public static final int login=0x7f030008;
+        public static final int newaccount_page=0x7f030009;
+        public static final int register=0x7f03000a;
+        public static final int reset_password=0x7f03000b;
+        public static final int setting_page=0x7f03000c;
+        public static final int transaction_page=0x7f03000d;
+        public static final int user_page=0x7f03000e;
+        public static final int welcome_screen=0x7f03000f;
     }
     public static final class menu {
         public static final int account_menu=0x7f080000;
         public static final int bank_account_detail=0x7f080001;
         public static final int main=0x7f080002;
-        public static final int user_page_menu=0x7f080003;
+        public static final int transaction_menu=0x7f080003;
+        public static final int user_page_menu=0x7f080004;
     }
     public static final class string {
         public static final int account_text=0x7f06000b;
@@ -134,6 +141,7 @@ public final class R {
         public static final int remove_user=0x7f06000d;
         public static final int reset_pw=0x7f06000c;
         public static final int signup=0x7f060007;
+        public static final int spinner_title=0x7f06000e;
     }
     public static final class style {
         /** 

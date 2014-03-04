@@ -5,10 +5,17 @@ import java.util.List;
 import com.example.financial.db.FinancialTransactionSource;
 import com.example.financial.model.Transaction;
 
+
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class AccountTransactionActivity extends ListActivity{
 
@@ -27,13 +34,19 @@ public class AccountTransactionActivity extends ListActivity{
 		display();
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.transaction_menu, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+	
 	public void display(){
 		transactions = datasource.getTransactionList(bankname);
 		ArrayAdapter<Transaction> adapter = new ArrayAdapter<Transaction>(this, R.layout.list_view1, transactions);
 		setListAdapter(adapter);
 		Log.i(MainActivity.LOGTAG, "Refresh Account List");
 	}
-	
 	
 	@Override
 	protected void onResume() {
@@ -46,5 +59,30 @@ public class AccountTransactionActivity extends ListActivity{
 	protected void onPause() {
 		super.onPause();
 		datasource.close();
+	}
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+//		Intent intent = new Intent(this, BankAccountDetailActivity.class);
+//		intent.putExtra("bankname", bankname);
+//		Log.i(MainActivity.LOGTAG, "Pass in bankname");
+//		startActivity(intent);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.add_new_account:
+	        	Intent intent = new Intent(this, AddTransactionActivity.class);
+	        	intent.putExtra("bankname", bankname);
+	        	Log.i(MainActivity.LOGTAG, "Pass in userid");
+	        	startActivity(intent);
+	        	break;
+	        default:
+	        	break;
+	    }
+	            return super.onOptionsItemSelected(item);
 	}
 }

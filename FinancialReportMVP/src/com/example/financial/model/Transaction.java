@@ -1,5 +1,9 @@
 package com.example.financial.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import com.example.financialreportmvp.MainActivity;
 
 import android.os.Parcel;
@@ -23,19 +27,26 @@ public class Transaction implements Parcelable{
 		this.type = "";
 		this.date = "";
 		this.amount = 0;
-		this.status = "";
-		this.recordTime = "";
+		this.status = "pending";
+		this.recordTime = getDateTime();
 		this.bkDisName = "";
 	}
 
+	private String getDateTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "yyyy-MM-dd", Locale.getDefault());
+        Date date = new Date();
+        return dateFormat.format(date);
+}
+	
 	public Transaction(String name, String type, String date, Double amount,
-			String status, String recordTime, String bkDisName) {
+			String bkDisName) {
 		this.name = name;
 		this.type = type;
 		this.date = date;
 		this.amount = amount;
-		this.status = status;
-		this.recordTime = recordTime;
+		this.status = "pending";
+		this.recordTime = getDateTime();
 		this.bkDisName = bkDisName;
 	}
 
@@ -97,7 +108,7 @@ public class Transaction implements Parcelable{
 	
 	@Override
 	public String toString() {
-		return this.name + " : " + this.amount + " ( "
+		return this.name + " : $" + this.amount + " ( "
 				+ this.date + ")";
 	}
 	
