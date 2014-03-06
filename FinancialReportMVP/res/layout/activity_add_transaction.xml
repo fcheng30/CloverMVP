@@ -44,6 +44,12 @@
         android:layout_marginTop="19dp"
         android:prompt="@string/spinner_title" />
 
+    <TextView
+        android:id="@+id/tranText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tranTypeSpinner" />
+
     <Button
         android:id="@+id/tranSubmit"
         android:layout_width="wrap_content"

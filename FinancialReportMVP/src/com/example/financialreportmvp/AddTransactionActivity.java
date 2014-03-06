@@ -39,6 +39,8 @@ public class AddTransactionActivity extends Activity implements IAddTransactionV
 		datasource = new FinancialTransactionSource(this);
 		b = getIntent().getExtras();
 		bankname = b.getString("bankname");
+		
+		text = (TextView) findViewById(R.id.tranText);
 		name = (EditText) findViewById(R.id.tranName);
 		date = (EditText) findViewById(R.id.tranDate);
 		amount = (EditText) findViewById(R.id.tranAmount);
@@ -115,8 +117,7 @@ public class AddTransactionActivity extends Activity implements IAddTransactionV
 
 	@Override
 	public void setText(String t) {
-		// TODO Auto-generated method stub
-		
+		text.setText(t);
 	}
 
 	@Override

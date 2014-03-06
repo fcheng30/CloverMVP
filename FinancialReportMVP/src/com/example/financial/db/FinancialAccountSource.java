@@ -18,7 +18,7 @@ public class FinancialAccountSource {
 	SQLiteOpenHelper dbhelper;
 	SQLiteDatabase db;
 	
-	private static final String[] accountColumns = {
+	public static final String[] accountColumns = {
 		FinancialDBOpenHelper.COLUMN_ACNAME,
 		FinancialDBOpenHelper.COLUMN_DISNAME,
 		FinancialDBOpenHelper.COLUMN_BALANCE,
