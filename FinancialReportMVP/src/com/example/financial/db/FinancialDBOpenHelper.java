@@ -50,10 +50,10 @@ public class FinancialDBOpenHelper extends SQLiteOpenHelper{
 	public static final String COLUMN_TRBKDISNAME = "trBKDisName";
 	
 	private static final String TRANSACTION_TABLE_CREATE = 
-			"CREATE TABLE " + TABLE_TRANSACTIONS + "( " +
-			COLUMN_TRNAME + " TEXT, " + COLUMN_TRTYPE + " TEXT, "
+			"CREATE TABLE " + TABLE_TRANSACTIONS + "( " 
+			+ COLUMN_TRNAME + " TEXT, " + COLUMN_TRTYPE + " TEXT, "
 		    + COLUMN_TRDATE + " DATE, " + COLUMN_TRAMOUNT + " DOUBLE, "
-			+ COLUMN_TRSTATUS + " TEXT,"+ COLUMN_TRRECORD + " DATE, "
+			+ COLUMN_TRSTATUS + " TEXT,"+ COLUMN_TRRECORD + " DATETIME, "
 			+ COLUMN_TRBKDISNAME +" TEXT,"
 		    + "FOREIGN KEY(" + COLUMN_TRBKDISNAME + ") REFERENCES " + TABLE_ACCOUNTS
 		    + "(" + COLUMN_DISNAME+  ")" +")";

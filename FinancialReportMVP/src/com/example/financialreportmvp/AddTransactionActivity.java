@@ -111,8 +111,12 @@ public class AddTransactionActivity extends Activity implements IAddTransactionV
 	}
 
 	@Override
-	public void addTrans(Transaction t) {
-		datasource.addTransaction(t);
+	public boolean addTrans(Transaction t) {
+		boolean flag = false;
+		if(datasource.addTransaction(t)){
+			flag = true;
+		}
+		return flag;
 	}
 
 	@Override

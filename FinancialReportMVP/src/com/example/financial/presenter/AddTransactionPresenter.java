@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.financial.model.Transaction;
+import com.example.financial.model.myDate;
 import com.example.financial.view.IAddTransactionView;
 
 
@@ -22,13 +23,13 @@ public class AddTransactionPresenter {
 	}
 	public void onSubmitClick(){
 		String name;
-		String date;
+		myDate date;
 		String amount;
 		String type;
 		String bankName;
 		String resultText = "";
 		name = view.getName();
-		date = view.getDate();
+		date = new myDate(view.getDate());
 		amount = view.getAmount();
 		type = view.getType();
 		if(name.equals("") || date.equals("") ||amount.equals("")||type.equals("")){
@@ -37,8 +38,11 @@ public class AddTransactionPresenter {
 		else{
 			bankName = view.getBKDisname();
 			double dbamount = Double.parseDouble(amount);
-			view.addTrans(new Transaction(name,type,date,dbamount,bankName));
-			view.goBack();
+			if(view.addTrans(new Transaction(name,type,date,dbamount,bankName))){
+				view.goBack();
+			} else {
+				resultText = "Don't have enough balance.";
+			}
 		}
 		view.setText(resultText);
 	}

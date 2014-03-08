@@ -18,7 +18,7 @@ public class FinancialAccountSource {
 	SQLiteOpenHelper dbhelper;
 	SQLiteDatabase db;
 	
-	public static final String[] accountColumns = {
+	protected static final String[] accountColumns = {
 		FinancialDBOpenHelper.COLUMN_ACNAME,
 		FinancialDBOpenHelper.COLUMN_DISNAME,
 		FinancialDBOpenHelper.COLUMN_BALANCE,
@@ -95,6 +95,8 @@ public class FinancialAccountSource {
 		String[] values = new String[]{userID, displayName};
 		db.delete(FinancialDBOpenHelper.TABLE_ACCOUNTS, FinancialDBOpenHelper.COLUMN_ACUSERID + "=? AND "
 		+ FinancialDBOpenHelper.COLUMN_DISNAME + "=?" , values);
+		db.delete(FinancialDBOpenHelper.TABLE_TRANSACTIONS, FinancialDBOpenHelper.COLUMN_TRBKDISNAME + " = "
+				+ "'" + displayName + "'", null);
 		Log.i(LOGTAG, "account deleted");
 	}
 }

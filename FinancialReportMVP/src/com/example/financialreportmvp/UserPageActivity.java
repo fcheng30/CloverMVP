@@ -34,6 +34,7 @@ public class UserPageActivity extends ListActivity{
 		user = b.getParcelable("com.example.financial.model.User");
 		menu = new ArrayList<String>();
 		menu.add("Transactions");
+		menu.add("Spending Report");
 		userName.setText("Hello, "+ user.getName());
 		display();
 	}
@@ -77,6 +78,11 @@ public class UserPageActivity extends ListActivity{
 			intent.putExtra("userid", user.getUserid());
         	Log.i(MainActivity.LOGTAG, "Pass in userid");
 			startActivity(intent);
+			break;
+		case 1:
+			Intent spendingIntent = new Intent(this, SpendingReportActivity.class);
+			startActivity(spendingIntent);
+			break;
 		default:
 			break;
 		}

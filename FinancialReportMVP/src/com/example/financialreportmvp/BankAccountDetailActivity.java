@@ -19,7 +19,6 @@ public class BankAccountDetailActivity extends Activity {
 			String test;
 	private TextView bankname;
 	private TextView accountname;
-	private TextView userid;
 	private TextView balance;
 	private TextView mir;
 	private BankAccount baccount; 
@@ -53,6 +52,18 @@ public class BankAccountDetailActivity extends Activity {
 		mir.setText(Double.toString(baccount.getMir()));		
 	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		datasource.open();
+	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		datasource.close();
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

@@ -14,9 +14,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
             android:layout_marginTop="30sp"
             android:layout_weight="0.5"
+            android:gravity="right"
+            android:paddingRight="10sp"
             android:text="BankName" />
 
         <TextView
@@ -37,9 +38,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
             android:layout_marginTop="30sp"
             android:layout_weight="0.5"
+            android:gravity="right"
+            android:paddingRight="10sp"
             android:text="AccountDisplayName" />
 
         <TextView
@@ -60,9 +62,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
             android:layout_marginTop="30sp"
             android:layout_weight="0.5"
+            android:gravity="right"
+            android:paddingRight="10sp"
             android:text="Balance" />
 
         <TextView
@@ -83,9 +86,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
             android:layout_marginTop="30sp"
             android:layout_weight="0.5"
+            android:gravity="right"
+            android:paddingRight="10sp"
             android:text="MonthlyInterestRate" />
 
         <TextView

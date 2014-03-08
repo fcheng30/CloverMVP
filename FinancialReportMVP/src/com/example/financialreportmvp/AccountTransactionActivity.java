@@ -64,10 +64,12 @@ public class AccountTransactionActivity extends ListActivity{
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-//		Intent intent = new Intent(this, BankAccountDetailActivity.class);
-//		intent.putExtra("bankname", bankname);
-//		Log.i(MainActivity.LOGTAG, "Pass in bankname");
-//		startActivity(intent);
+		Intent intent = new Intent(this, TransactionDetailActivity.class);
+		Transaction tran = transactions.get(position);
+		intent.putExtra("com.example.financial.model.Transaction", tran);
+		intent.putExtra("com.example.financial.model.myDate", tran.getDate());
+		Log.i(MainActivity.LOGTAG, "Pass in account transaction");
+		startActivity(intent);
 	}
 	
 	@Override

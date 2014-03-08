@@ -18,7 +18,7 @@ public class FinancialUserSource {
 	SQLiteOpenHelper dbhelper;
 	SQLiteDatabase db;
 	
-	public static final String[] userColumns = {
+	protected static final String[] userColumns = {
 		FinancialDBOpenHelper.COLUMN_USERID,
 		FinancialDBOpenHelper.COLUMN_PASSWORD,
 		FinancialDBOpenHelper.COLUMN_NAME,

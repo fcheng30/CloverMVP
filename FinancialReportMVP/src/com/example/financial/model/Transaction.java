@@ -10,22 +10,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
-public class Transaction implements Parcelable{
-	
+public class Transaction implements Parcelable {
+
 	private String name;
 	private String type;
-	private String date;
+	private myDate date;
 	private double amount;
 	private String status;
 	private String recordTime;
 	private String bkDisName;
-	
-
 
 	public Transaction() {
 		this.name = "";
 		this.type = "";
-		this.date = "";
+		this.date = new myDate();
 		this.amount = 0;
 		this.status = "pending";
 		this.recordTime = getDateTime();
@@ -33,13 +31,13 @@ public class Transaction implements Parcelable{
 	}
 
 	private String getDateTime() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyy-MM-dd", Locale.getDefault());
-        Date date = new Date();
-        return dateFormat.format(date);
-}
-	
-	public Transaction(String name, String type, String date, Double amount,
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",
+				Locale.getDefault());
+		Date date = new Date();
+		return dateFormat.format(date);
+	}
+
+	public Transaction(String name, String type, myDate date, Double amount,
 			String bkDisName) {
 		this.name = name;
 		this.type = type;
@@ -66,11 +64,11 @@ public class Transaction implements Parcelable{
 		this.type = type;
 	}
 
-	public String getDate() {
+	public myDate getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(myDate date) {
 		this.date = date;
 	}
 
@@ -97,7 +95,7 @@ public class Transaction implements Parcelable{
 	public void setRecordTime(String recordTime) {
 		this.recordTime = recordTime;
 	}
-	
+
 	public String getBkDisName() {
 		return bkDisName;
 	}
@@ -105,57 +103,55 @@ public class Transaction implements Parcelable{
 	public void setBkDisName(String bkDisName) {
 		this.bkDisName = bkDisName;
 	}
-	
+
 	@Override
 	public String toString() {
-		return this.name + " : $" + this.amount + " ( "
-				+ this.date + ")";
+		return this.bkDisName + " : " + this.name
+				+ " : $" + this.amount + " ( " + this.date + ")";
 	}
-	
-	
+
 	@Override
 	public int describeContents() {
 		return 0;
 	}
-	
+
 	public Transaction(Parcel in) {
 		name = in.readString();
 		type = in.readString();
 		amount = in.readDouble();
-		date = in.readString();
+		date = (myDate) in.readValue(myDate.class.getClassLoader());
 		status = in.readString();
 		recordTime = in.readString();
 		bkDisName = in.readString();
 	}
-	
+
 	@Override
 	public void writeToParcel(Parcel dest, int flag) {
 		Log.i(MainActivity.LOGTAG, "writeToParcel");
 		dest.writeString(name);
 		dest.writeString(type);
 		dest.writeDouble(amount);
-		dest.writeString(date);
+		dest.writeValue(date);
 		dest.writeString(status);
 		dest.writeString(recordTime);
 		dest.writeString(bkDisName);
 
 	}
 
-	public static final Parcelable.Creator<Transaction> CREATOR =
-			new Parcelable.Creator<Transaction>() {
+	public static final Parcelable.Creator<Transaction> CREATOR = new Parcelable.Creator<Transaction>() {
 
-				@Override
-				public Transaction createFromParcel(Parcel arg0) {
-					Log.i(MainActivity.LOGTAG, "createFromParcel");
-					return new Transaction(arg0);
-				}
+		@Override
+		public Transaction createFromParcel(Parcel arg0) {
+			Log.i(MainActivity.LOGTAG, "createFromParcel");
+			return new Transaction(arg0);
+		}
 
-				@Override
-				public Transaction[] newArray(int arg0) {
-					Log.i(MainActivity.LOGTAG, "newArray");
-					return new Transaction[arg0];
-				}
-		
-			};
+		@Override
+		public Transaction[] newArray(int arg0) {
+			Log.i(MainActivity.LOGTAG, "newArray");
+			return new Transaction[arg0];
+		}
+
+	};
 
 }
