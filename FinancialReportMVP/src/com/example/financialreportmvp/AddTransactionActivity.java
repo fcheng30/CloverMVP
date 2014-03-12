@@ -60,6 +60,8 @@ public class AddTransactionActivity extends Activity implements IAddTransactionV
 			long id) {
 		// On selecting a spinner item
 		type = parent.getItemAtPosition(position).toString();
+	
+		
 	}
 
 	@Override

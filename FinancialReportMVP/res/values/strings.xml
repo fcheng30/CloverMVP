@@ -18,4 +18,6 @@
     <string name="remove_user">All the data of the user will be deleted,
         		 are you still going to process?</string>
     <string name="spinner_title">Select Type</string>
+    <string name="report_year_spinner">Select Year</string>
+    <string name="report_month_spinner">Select Month</string>
 </resources>

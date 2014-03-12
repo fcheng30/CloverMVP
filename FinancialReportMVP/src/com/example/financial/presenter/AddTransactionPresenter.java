@@ -21,6 +21,7 @@ public class AddTransactionPresenter {
 		categories.add("Deposit");
 		return (ArrayList<String>) categories;
 	}
+	
 	public void onSubmitClick(){
 		String name;
 		myDate date;

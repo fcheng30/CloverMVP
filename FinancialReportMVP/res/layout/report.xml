@@ -4,12 +4,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/reportYearSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:prompt="@string/report_year_spinner" />
+
+        <Spinner
+            android:id="@+id/reportMonthSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:prompt="@string/report_month_spinner" />
+
+        <Button
+            android:id="@+id/reportViewB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_roundedge"
+            android:onClick="onViewClick"
+            android:text="View" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/reportText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15sp"
+        android:layout_marginTop="20sp"
         android:textSize="15dp" />
 
     <ListView

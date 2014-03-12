@@ -5,23 +5,30 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Report {
-	myDate currentDate;
-	Date date;
+	private myDate reportDate;
+	private Date date;
+	private String title;
 	
 	public Report() {
 		date = new Date();
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		this.currentDate = new myDate(df.format(date));;
+		this.reportDate = new myDate(df.format(date));
+		title = "";
 	}
 	
-	public String getYearMonth(){
+	public String getCurrentYearMonth(){
 		DateFormat df = new SimpleDateFormat("yyyyMM");
 		date = new Date();
 		return df.format(date);
 	}
 	
-	public String getSpendingReportTitle(){
-		return "Spending Report for " + currentDate.getYear() + " "+ currentDate.getFormatMonth() + " 1 - 30";
+	public String getSpendingTitle(String year, String month){
+		if(!year.equals("")|| !month.equals("")){
+			reportDate.setYear(Integer.parseInt(year));
+			reportDate.setMonth(Integer.parseInt(month));
+		}
+		return"Spending Report for " + reportDate.getYear() + " "+ reportDate.getFormatMonth();
 	}
+	
 	
 }
