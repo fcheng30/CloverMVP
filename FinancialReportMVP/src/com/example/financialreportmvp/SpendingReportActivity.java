@@ -6,6 +6,7 @@ import java.util.List;
 import com.example.financial.db.FinancialReportGenerator;
 import com.example.financial.model.Report;
 import com.example.financial.model.Transaction;
+import com.example.financial.model.spendingReport;
 import com.example.financial.presenter.ReportPresenter;
 import com.example.financial.view.IReportView;
 
@@ -44,7 +45,7 @@ public class SpendingReportActivity extends ListActivity implements
 		setContentView(R.layout.report);
 		datasource = new FinancialReportGenerator(this);
 		presenter = new ReportPresenter(this);
-		rp = new Report();
+		rp = new spendingReport();
 		
 		b = getIntent().getExtras();
 		userid = b.getString("userid");
@@ -103,7 +104,7 @@ public class SpendingReportActivity extends ListActivity implements
 				R.layout.list_view1, spendingList);
 		setListAdapter(adapter);
 		Log.i(MainActivity.LOGTAG, "Refresh Spending List");
-		text.setText(rp.getSpendingTitle(year, month));
+		text.setText(rp.getTitle(year, month));
 		amountText.setText(rp.getTotalTile(datasource.getTotal(spendingList)));
 	}
 

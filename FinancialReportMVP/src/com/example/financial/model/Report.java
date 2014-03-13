@@ -4,9 +4,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Report {
-	private myDate reportDate;
-	private Date date;
+public abstract class Report {
+	protected myDate reportDate;
+	protected Date date;
 	
 	public Report() {
 		date = new Date();
@@ -20,13 +20,7 @@ public class Report {
 		return df.format(date);
 	}
 	
-	public String getSpendingTitle(String year, String month){
-		if(!year.equals("")|| !month.equals("")){
-			reportDate.setYear(Integer.parseInt(year));
-			reportDate.setMonth(Integer.parseInt(month));
-		}
-		return"Spending Report for " + reportDate.getYear() + " "+ reportDate.getFormatMonth();
-	}
+	abstract public String getTitle(String year, String month);
 	
 	public String getTotalTile(double total){
 		return "The total is $" + total;
