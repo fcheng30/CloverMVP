@@ -81,6 +81,8 @@ public class UserPageActivity extends ListActivity{
 			break;
 		case 1:
 			Intent spendingIntent = new Intent(this, SpendingReportActivity.class);
+			spendingIntent.putExtra("userid", user.getUserid());
+        	Log.i(MainActivity.LOGTAG, "Pass in userid");
 			startActivity(spendingIntent);
 			break;
 		default:

@@ -19,6 +19,7 @@ public class Transaction implements Parcelable {
 	private String status;
 	private String recordTime;
 	private String bkDisName;
+	private String userid;
 
 	public Transaction() {
 		this.name = "";
@@ -28,6 +29,7 @@ public class Transaction implements Parcelable {
 		this.status = "pending";
 		this.recordTime = getDateTime();
 		this.bkDisName = "";
+		this.userid = "";
 	}
 
 	private String getDateTime() {
@@ -38,7 +40,7 @@ public class Transaction implements Parcelable {
 	}
 
 	public Transaction(String name, String type, myDate date, Double amount,
-			String bkDisName) {
+			String bkDisName, String userid) {
 		this.name = name;
 		this.type = type;
 		this.date = date;
@@ -46,6 +48,7 @@ public class Transaction implements Parcelable {
 		this.status = "pending";
 		this.recordTime = getDateTime();
 		this.bkDisName = bkDisName;
+		this.userid = userid;
 	}
 
 	public String getName() {
@@ -104,6 +107,15 @@ public class Transaction implements Parcelable {
 		this.bkDisName = bkDisName;
 	}
 
+
+	public String getUserid() {
+		return userid;
+	}
+
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	
 	@Override
 	public String toString() {
 		return this.bkDisName + " : " + this.name
@@ -123,6 +135,7 @@ public class Transaction implements Parcelable {
 		status = in.readString();
 		recordTime = in.readString();
 		bkDisName = in.readString();
+		userid = in.readString();
 	}
 
 	@Override
@@ -135,8 +148,10 @@ public class Transaction implements Parcelable {
 		dest.writeString(status);
 		dest.writeString(recordTime);
 		dest.writeString(bkDisName);
+		dest.writeString(userid);
 
 	}
+
 
 	public static final Parcelable.Creator<Transaction> CREATOR = new Parcelable.Creator<Transaction>() {
 

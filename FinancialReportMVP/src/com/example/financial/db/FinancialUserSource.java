@@ -98,6 +98,8 @@ public class FinancialUserSource {
 	public void removeUser(String userid) {
 		String[] value = new String[]{userid};
 		db.delete(FinancialDBOpenHelper.TABLE_USERS, FinancialDBOpenHelper.COLUMN_USERID + "=?", value);
+		db.delete(FinancialDBOpenHelper.TABLE_ACCOUNTS, FinancialDBOpenHelper.COLUMN_ACUSERID+ "=?", value);
+		db.delete(FinancialDBOpenHelper.TABLE_TRANSACTIONS, FinancialDBOpenHelper.COLUMN_TRUSERID+ "=?", value);
 		Log.i(LOGTAG, "Delete user : " + userid);
 	}
 	

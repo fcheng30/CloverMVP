@@ -48,15 +48,18 @@ public class FinancialDBOpenHelper extends SQLiteOpenHelper{
 	public static final String COLUMN_TRSTATUS = "trStatus";
 	public static final String COLUMN_TRRECORD = "trRecordTime";
 	public static final String COLUMN_TRBKDISNAME = "trBKDisName";
+	public static final String COLUMN_TRUSERID = "trUserID";
 	
 	private static final String TRANSACTION_TABLE_CREATE = 
 			"CREATE TABLE " + TABLE_TRANSACTIONS + "( " 
 			+ COLUMN_TRNAME + " TEXT, " + COLUMN_TRTYPE + " TEXT, "
 		    + COLUMN_TRDATE + " DATE, " + COLUMN_TRAMOUNT + " DOUBLE, "
 			+ COLUMN_TRSTATUS + " TEXT,"+ COLUMN_TRRECORD + " DATETIME, "
-			+ COLUMN_TRBKDISNAME +" TEXT,"
-		    + "FOREIGN KEY(" + COLUMN_TRBKDISNAME + ") REFERENCES " + TABLE_ACCOUNTS
-		    + "(" + COLUMN_DISNAME+  ")" +")";
+			+ COLUMN_TRBKDISNAME +" TEXT," + COLUMN_TRUSERID + " TEXT,"
+		    + "FOREIGN KEY(" + COLUMN_TRBKDISNAME +") REFERENCES " + TABLE_ACCOUNTS
+		    + "(" + COLUMN_DISNAME + ")" 
+		    + "FOREIGN KEY(" + COLUMN_TRUSERID +") REFERENCES " + TABLE_USERS
+		    + "(" + COLUMN_USERID + ")"+")";
 	
 	public FinancialDBOpenHelper(Context context) {
 		super(context, DATABASE_NAME, null,DATABASE_VERSION);

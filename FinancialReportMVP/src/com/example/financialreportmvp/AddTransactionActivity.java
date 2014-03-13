@@ -26,6 +26,7 @@ public class AddTransactionActivity extends Activity implements IAddTransactionV
 	private EditText amount;
 	private String type;
 	private String bankname;
+	private String userid;
 	private TextView text;
 	private Spinner typeSpinner;
 	private List<String> categories;
@@ -39,7 +40,7 @@ public class AddTransactionActivity extends Activity implements IAddTransactionV
 		datasource = new FinancialTransactionSource(this);
 		b = getIntent().getExtras();
 		bankname = b.getString("bankname");
-		
+		userid = b.getString("userid");
 		text = (TextView) findViewById(R.id.tranText);
 		name = (EditText) findViewById(R.id.tranName);
 		date = (EditText) findViewById(R.id.tranDate);
@@ -129,6 +130,11 @@ public class AddTransactionActivity extends Activity implements IAddTransactionV
 	@Override
 	public void goBack() {
 		finish();
+	}
+
+	@Override
+	public String getUserid() {
+		return userid;
 	}
 
 

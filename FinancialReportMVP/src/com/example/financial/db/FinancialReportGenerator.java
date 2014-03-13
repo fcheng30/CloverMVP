@@ -31,14 +31,24 @@ public class FinancialReportGenerator {
 		db.close();
 	}
 		
-	public List<Transaction> getSpendingList(String date){
+	public List<Transaction> getSpendingList(String date, String userid){
 		List<Transaction> trs = new ArrayList<Transaction>();
 		Cursor cursor = db.query(FinancialDBOpenHelper.TABLE_TRANSACTIONS, FinancialTransactionSource.transactionColumns,
 				FinancialDBOpenHelper.COLUMN_TRTYPE + " = " + "'Withdrawl' AND "
-				 + "strftime('%Y%m'," + FinancialDBOpenHelper.COLUMN_TRDATE + ") = " + "'" + date + "'",
+				 + "strftime('%Y%m'," + FinancialDBOpenHelper.COLUMN_TRDATE + ") = " + "'" + date + "' AND " +
+				FinancialDBOpenHelper.COLUMN_TRUSERID + " = " + "'"+ userid + "'",
 				 null, null, null, null);
 		Log.i(LOGTAG, "Find " + cursor.getCount() + " rows");
 		return FinancialTransactionSource.cursorTransaction(cursor, trs);
 	}
 	
+	public Double getTotal(List<Transaction> list){
+		List<Transaction> trs = list;
+		double total = 0;
+		for(int i=0; i < trs.size(); i++){
+			total += trs.get(i).getAmount();
+		}
+		return total;
+		
+	}
 }

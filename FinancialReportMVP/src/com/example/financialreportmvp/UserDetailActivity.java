@@ -32,7 +32,7 @@ public class UserDetailActivity extends Activity{
 		Bundle b = getIntent().getExtras();
 		user = b.getParcelable("com.example.financial.model.User");
 		display();
-		
+		builder = new AlertDialog.Builder(this);
 		datasource = new FinancialUserSource(this);
 		datasource.open();
 	}

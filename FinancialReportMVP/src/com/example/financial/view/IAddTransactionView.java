@@ -9,7 +9,7 @@ public interface IAddTransactionView {
 	String getDate();
 	String getAmount();
 	String getBKDisname();
-	
+	String getUserid();
 	boolean addTrans(Transaction t);
 	void setText(String t);
 	void goBack();

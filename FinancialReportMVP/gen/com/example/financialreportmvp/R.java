@@ -59,20 +59,21 @@ public final class R {
     public static final class id {
         public static final int accountText=0x7f090022;
         public static final int accountname=0x7f090007;
-        public static final int action_settings=0x7f090034;
-        public static final int add_new_account=0x7f090032;
+        public static final int action_settings=0x7f090035;
+        public static final int add_new_account=0x7f090033;
+        public static final int add_new_transaction=0x7f090037;
         public static final int bLogin=0x7f09000b;
         public static final int bRegister=0x7f09000a;
         public static final int balance=0x7f090008;
         public static final int bankname=0x7f090006;
-        public static final int button2=0x7f09002e;
-        public static final int delete_bank_account=0x7f090033;
-        public static final int delete_trans=0x7f090035;
+        public static final int button2=0x7f09002f;
+        public static final int delete_bank_account=0x7f090034;
+        public static final int delete_trans=0x7f090036;
         public static final int delete_userB=0x7f090019;
         public static final int email=0x7f090017;
         public static final int loginText=0x7f09001a;
         public static final int loginbutton=0x7f09001d;
-        public static final int logoutButton=0x7f090030;
+        public static final int logoutButton=0x7f090031;
         public static final int mainText=0x7f09000c;
         public static final int mir=0x7f090009;
         public static final int name=0x7f090014;
@@ -89,12 +90,13 @@ public final class R {
         public static final int regUserid=0x7f090024;
         public static final int reportMonthSpinner=0x7f09002a;
         public static final int reportText=0x7f09002c;
+        public static final int reportTotalAmountText=0x7f09002d;
         public static final int reportViewB=0x7f09002b;
         public static final int reportYearSpinner=0x7f090029;
         public static final int reset_passwordB=0x7f090018;
-        public static final int setting_account_button=0x7f09002f;
+        public static final int setting_account_button=0x7f090030;
         public static final int signUP=0x7f090028;
-        public static final int textView1=0x7f09002d;
+        public static final int textView1=0x7f09002e;
         public static final int tranAmount=0x7f090002;
         public static final int tranDate=0x7f090001;
         public static final int tranName=0x7f090000;
@@ -108,8 +110,8 @@ public final class R {
         public static final int tran_status=0x7f090013;
         public static final int tran_type=0x7f090010;
         public static final int transD_textView6=0x7f090012;
-        public static final int userPageName=0x7f090031;
-        public static final int user_page_setting=0x7f090036;
+        public static final int userPageName=0x7f090032;
+        public static final int user_page_setting=0x7f090038;
         public static final int username=0x7f090015;
         public static final int usernameLog=0x7f09001b;
     }

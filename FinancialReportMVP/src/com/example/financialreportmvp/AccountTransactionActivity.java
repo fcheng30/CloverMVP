@@ -22,6 +22,7 @@ public class AccountTransactionActivity extends ListActivity{
 	private FinancialTransactionSource datasource;
 	private List<Transaction> transactions;
 	private String bankname;
+	private String userid;
 	Bundle b;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class AccountTransactionActivity extends ListActivity{
 		setContentView(R.layout.bank_transaction);
 		b = getIntent().getExtras();
 		bankname = b.getString("bankname");
+		userid = b.getString("userid");
 		datasource = new FinancialTransactionSource(this);
 		datasource.open();
 		display();
@@ -42,7 +44,7 @@ public class AccountTransactionActivity extends ListActivity{
 	}
 	
 	public void display(){
-		transactions = datasource.getTransactionList(bankname);
+		transactions = datasource.getTransactionList(bankname, userid);
 		ArrayAdapter<Transaction> adapter = new ArrayAdapter<Transaction>(this, R.layout.list_view1, transactions);
 		setListAdapter(adapter);
 		Log.i(MainActivity.LOGTAG, "Refresh Account List");
@@ -76,10 +78,11 @@ public class AccountTransactionActivity extends ListActivity{
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
-	        case R.id.add_new_account:
+	        case R.id.add_new_transaction:
 	        	Intent intent = new Intent(this, AddTransactionActivity.class);
 	        	intent.putExtra("bankname", bankname);
-	        	Log.i(MainActivity.LOGTAG, "Pass in userid");
+	        	intent.putExtra("userid", userid);
+	        	Log.i(MainActivity.LOGTAG, "Pass in userid, and bankname");
 	        	startActivity(intent);
 	        	break;
 	        default:
