@@ -1,7 +1,7 @@
 package com.example.financial.model;
 
-import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -10,7 +10,7 @@ import java.util.Map;
  * @author Farong Cheng
  *
  */
-public class MemoryModel implements IModel{
+public class MemoryModel implements IUserModel{
 	
 	/** the data store of all users */
 	private static Map<String, User> users = new HashMap<String, User>();
@@ -32,22 +32,21 @@ public class MemoryModel implements IModel{
 	}
 
 	@Override
-	public User findUserById(String uid) {
-		User result = users.get(uid);
-		if (result == null){
-			return User.NULL_USER;
-		}
-		return result;
-		
+	public User findUser(String uid) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public User[] getUsers() {
-		Collection<User> uCopy = users.values();
-		User[] uList = new User[uCopy.size()];
-		int i = 0;
-		for (User u : uCopy) uList[i++] = u;
-		return uList;
+	public List<User> getUserList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void resetPW(String uid) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

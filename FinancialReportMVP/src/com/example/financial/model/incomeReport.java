@@ -1,9 +1,9 @@
 package com.example.financial.model;
 
-public class spendingReport extends Report{
+public class incomeReport extends Report {
 
 	
-	public spendingReport() {
+	public incomeReport() {
 		super();
 	}
 
@@ -13,8 +13,7 @@ public class spendingReport extends Report{
 			reportDate.setYear(Integer.parseInt(year));
 			reportDate.setMonth(Integer.parseInt(month));
 		}
-		return"Spending Transactions for " + reportDate.getYear() + " "+ reportDate.getFormatMonth();
+		return"Income Transactions for " + reportDate.getYear() + " "+ reportDate.getFormatMonth();
 	}
-	
 	
 }
